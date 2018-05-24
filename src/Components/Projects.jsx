@@ -11,7 +11,7 @@ class Projects extends Component {
     if(this.props.projects.length > 0){
       projectItems = this.props.projects.map(project => {
         return (
-          <strong>{project.title}</strong> - {project.category}
+          <ProjectItem projectitem={project} key={project.title} onDelete={this.deleteProject.bind(this)}/>
         )
       });
     }

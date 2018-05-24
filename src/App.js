@@ -7,6 +7,7 @@ import AddProject from './Components/AddProject';
 import Todos from './Components/Todos';
 import uuid from 'uuid';
 import $ from 'jquery';
+import {Tabs} from './Config/Router';
 
 class App extends Component {
   constructor() {
@@ -61,9 +62,9 @@ class App extends Component {
     this.getTodos();
   }
 
-componentDidMount(){
-  this.getTodos();
-}
+  componentDidMount(){
+    this.getTodos();
+  }
 
   handleAddProject(project){
     console.log(project)
@@ -85,6 +86,7 @@ componentDidMount(){
         <AddProject addProject={this.handleAddProject.bind(this)}/>
         <Projects projects={this.state.projects} onDelete={this.handleDeleteProject.bind(this)}/>
         <Todos todos={this.state.todos} />
+        <Tabs />
       </div>
     );
   }
